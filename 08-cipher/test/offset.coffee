@@ -7,7 +7,7 @@ describe '08-cipher/lib/offset', ->
 
   describe 'default secret', ->
 
-    it 'should encrypt/decrypt', ->
+    it 'should encrypt', ->
       assert.equal offset.encrypt('hello there'), 'gdkkn sgdqd'
 
     it 'should decrypt', ->
@@ -16,7 +16,7 @@ describe '08-cipher/lib/offset', ->
 
   describe 'custom secret', ->
 
-    it 'should encrypt/decrypt', ->
+    it 'should encrypt', ->
       assert.equal offset.encrypt('hello there', 13), '[X__b g[XeX'
 
     it 'should decrypt', ->

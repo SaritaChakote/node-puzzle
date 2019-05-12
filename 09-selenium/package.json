@@ -3,10 +3,11 @@
     "coffee-script": "^1.9.3"
   },
   "devDependencies": {
-    "mocha": "^2.3.3",
-    "selenium-webdriver": "^2.47.0"
+    "coffeescript": "^2.4.1",
+    "mocha": "^6.1.4",
+    "selenium-webdriver": "^3.6.0"
   },
   "scripts": {
-    "test": "mocha --timeout 60000 --reporter spec --compilers coffee:coffee-script/register test.coffee"
+    "test": "mocha test/* --timeout 50000 --reporter spec --require coffeescript/register"
   }
 }

@@ -10,4 +10,8 @@ exports.validate = (data) ->
 
   if !/\w+@\w+/.test data.email then return false
 
+  if data.taxrate > 1 then return false
+
+  if data.favouriteColour isnt '#ff6' then return false
+
   return true

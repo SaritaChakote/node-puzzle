@@ -52,3 +52,39 @@ describe '07-validation', ->
   # !!!!!
   # Add more tests for different data that users might try to provide!
   # !!!!!
+
+  it 'should return `false` for invalid data: name', ->
+    assert !validate
+      id: 1
+      name: 'abcaaaaaaaaaaaaaaaaaaaaaa' # <--- problem
+      email: 'foo@bar.com'
+      taxRate: 0.1
+      favouriteColour: '#ff6'
+      interests: ["cycling", "programming"]
+
+  it 'should return `false` for invalid data: email', ->
+     assert !validate
+      id: 1
+      name: 'John Doe'
+      email: 'foo @baz.com' # <--- problem
+      taxRate: 0.1
+      favouriteColour: '#ff6'
+      interests: ["cycling", "programming"]
+
+  it 'should return `false` for invalid data: id', ->
+    assert !validate
+      id: 0.5 # <--- problem
+      name: 'John Doe'
+      email: 'foo@bar.com'
+      taxRate: 0.1
+      favouriteColour: '#ff6'
+      interests: ["cycling", "programming"]
+
+  it 'should return `false` for invalid data: favouriteColour', ->
+    assert !validate
+      id: 1
+      name: 'John Doe'
+      email: 'foo@bar.com'
+      taxRate: 0.1
+      favouriteColour: 'Orange' # <--- problem
+      interests: ["cycling", "programming"]
